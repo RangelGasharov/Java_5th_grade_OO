@@ -11,7 +11,7 @@ public class GUI {
         ArrayList<SDCard> availableSDCards = new ArrayList<>();
 
         Manufacturer canon = new Manufacturer("Canon", "Japan");
-        SDCard sdCard1 = new SDCard(16);
+        SDCard sdCard1 = new SDCard(160);
         SDCard sdCard2 = new SDCard(16);
         SDCard sdCard3 = new SDCard(32);
         Lens lens = new Lens(10, canon);
@@ -27,6 +27,7 @@ public class GUI {
             System.out.println("2 - Print all files");
             System.out.println("3 - Change SD-Card");
             System.out.println("4 - Change Resoultion");
+            System.out.println("5 - Get free storage space");
             System.out.println("404 - Turn off the camera");
             int selectionNumber = scanner.nextInt();
             switch (selectionNumber) {
@@ -37,11 +38,14 @@ public class GUI {
                     camera.getSdCard().printAllFiles();
                     break;
                 case 3:
-                    System.out.println("Change SD-Card");
+                    changeSDCard(camera, availableSDCards);
                     break;
                 case 4:
                     changeResolution(camera);
                     System.out.println("Resolution has been changed.");
+                    break;
+                case 5:
+                    System.out.println("Current free storage space: " + camera.getSdCard().getFreeSpace() + " MB");
                     break;
                 case 404:
                     isGoing = false;
@@ -80,6 +84,27 @@ public class GUI {
                 default:
                     System.out.println("The selection is not valid. Please write down a correct number.");
                     break;
+            }
+        }
+    }
+
+    public static void changeSDCard(Camera camera, ArrayList<SDCard> sdCards) {
+        boolean isGoing = true;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("You can choose between the following SD-Cards:");
+
+        for (int i = 0; i < sdCards.size(); i++) {
+            System.out.println("SD-Card #" + (i + 1) + ", Free space: " + sdCards.get(i).getFreeSpace() + " MB");
+        }
+        System.out.println("Please choose one of the SD-Cards by writing down their number.");
+        while (isGoing) {
+            int selectionNumber = scanner.nextInt();
+            if (selectionNumber < 1 || selectionNumber > sdCards.size()) {
+                System.out.println("There is no SD-Card with the given number. Please write down a correct number.");
+            } else {
+                camera.setSdCard(sdCards.get(selectionNumber - 1));
+                System.out.println("SD-Card has been changed to SD-Card #" + selectionNumber);
+                isGoing = false;
             }
         }
     }
