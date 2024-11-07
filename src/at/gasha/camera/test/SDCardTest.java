@@ -15,7 +15,12 @@ public class SDCardTest {
 
     @Test
     void testGetFiles() {
-
+        SDCard sdCard = new SDCard(0.3);
+        File file1 = new File("12345", new Date(), 0.1);
+        File file2 = new File("TestFile", new Date(), 0.1);
+        sdCard.saveFile(file1);
+        sdCard.saveFile(file2);
+        Assert.assertEquals(sdCard.getFiles().get(1).getName(), "TestFile");
     }
 
     @Test
@@ -28,6 +33,11 @@ public class SDCardTest {
 
     @Test
     void testSaveFile() {
-
+        SDCard sdCard = new SDCard(0.3);
+        File file1 = new File("12345", new Date(), 0.1);
+        File file2 = new File("TestFile", new Date(), 0.1);
+        sdCard.saveFile(file1);
+        sdCard.saveFile(file2);
+        Assert.assertEquals(sdCard.getFiles().get(1).getName(), "TestFile");
     }
 }
