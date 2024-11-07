@@ -1,27 +1,32 @@
 package at.gasha.camera.test;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import at.gasha.camera.Manufacturer;
 
 public class ManufacturerTest {
+    private Manufacturer canon;
+
+    @BeforeEach
+    void setupTestDate() {
+        this.canon = new Manufacturer("Canon", "Japan");
+    }
+
     @Test
     void testGetCountry() {
-        Manufacturer canon = new Manufacturer("Canon", "Japan");
-        Assert.assertEquals(canon.getCountry(), "Japan");
+        Assert.assertEquals(this.canon.getCountry(), "Japan");
     }
 
     @Test
     void testGetName() {
-        Manufacturer canon = new Manufacturer("Canon", "Japan");
-        Assert.assertEquals(canon.getName(), "Canon");
+        Assert.assertEquals(this.canon.getName(), "Canon");
     }
 
     @Test
     void testSetCountry() {
-        Manufacturer canon = new Manufacturer("Canon", "Japan");
-        canon.setCountry("Test");
-        Assert.assertEquals(canon.getCountry(), "Test");
+        this.canon.setCountry("Test");
+        Assert.assertEquals(this.canon.getCountry(), "Test");
     }
 }

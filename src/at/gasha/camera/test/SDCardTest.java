@@ -8,6 +8,7 @@ import at.gasha.camera.File;
 import at.gasha.camera.SDCard;
 
 public class SDCardTest {
+    @Test
     void testGetCapacityInMB() {
         SDCard sdCard = new SDCard(1000);
         Assert.assertEquals(sdCard.getFreeSpace(), 1000, 0);
