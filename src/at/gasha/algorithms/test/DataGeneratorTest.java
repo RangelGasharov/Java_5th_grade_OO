@@ -1,9 +1,9 @@
-package at.gasha.datagenerator.test;
+package at.gasha.algorithms.test;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import at.gasha.datagenerator.DataGenerator;
+import at.gasha.algorithms.DataGenerator;
 
 public class DataGeneratorTest {
     @Test

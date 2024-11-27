@@ -1,4 +1,4 @@
-package at.gasha.datagenerator;
+package at.gasha.algorithms;
 
 import java.util.Random;
 
