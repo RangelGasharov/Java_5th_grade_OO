@@ -16,14 +16,15 @@ public class DataGenerator {
         int[] data = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            data[i] = random.nextInt(min, max);
+            data[i] = random.nextInt(min, max + 1);
         }
         return data;
     }
 
     void printArray(int[] data) {
         for (int i = 0; i < data.length; i++) {
-            System.out.println(data[i]);
+            System.out.print(data[i] + " ");
         }
+        System.out.println();
     }
 }

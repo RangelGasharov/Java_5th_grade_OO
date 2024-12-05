@@ -10,5 +10,9 @@ public class Main {
         BubbleSort bubbleSort = new BubbleSort("BubbleSort");
         int[] numbersBubbleSort = bubbleSort.sort(numbers);
         generator.printArray(numbersBubbleSort);
+        System.out.println("InsertionSort array");
+        InsertionSort insertionSort = new InsertionSort("InsertionSort");
+        int[] numbersInsertionSort = insertionSort.sort(numbers);
+        generator.printArray(numbersInsertionSort);
     }
 }

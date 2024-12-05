@@ -14,9 +14,9 @@ public class DataGeneratorTest {
 
     @Test
     void testGenerateDataArray2() {
-        int[] data = DataGenerator.generateDataArray(10, 99, 100);
+        int[] data = DataGenerator.generateDataArray(100, 1, 5);
         for (int i = 0; i < data.length; i++) {
-            Assert.assertEquals(data[i], 99);
+            Assert.assertTrue(data[i] >= 1 && data[i] <= 5);
         }
     }
 }
