@@ -7,7 +7,7 @@ public class Main {
         int[] numbers = generator.generateDataArray(10, 0, 100);
         generator.printArray(numbers);
         System.out.println("Bubblesort array");
-        BubbleSort bubbleSort = new BubbleSort();
+        BubbleSort bubbleSort = new BubbleSort("BubbleSort");
         int[] numbersBubbleSort = bubbleSort.sort(numbers);
         generator.printArray(numbersBubbleSort);
     }
