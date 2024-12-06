@@ -14,5 +14,9 @@ public class Main {
         InsertionSort insertionSort = new InsertionSort("InsertionSort");
         int[] numbersInsertionSort = insertionSort.sort(numbers);
         generator.printArray(numbersInsertionSort);
+        System.out.println("SelectionSort array");
+        SelectionSort selectionSort = new SelectionSort("SelectionSort");
+        int[] numbersSelectionSort = selectionSort.sort(numbers);
+        generator.printArray(numbersSelectionSort);
     }
 }
