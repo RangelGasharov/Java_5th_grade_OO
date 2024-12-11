@@ -21,7 +21,7 @@ public class DataGenerator {
         return data;
     }
 
-    void printArray(int[] data) {
+    public static void printArray(int[] data) {
         for (int i = 0; i < data.length; i++) {
             System.out.print(data[i] + " ");
         }

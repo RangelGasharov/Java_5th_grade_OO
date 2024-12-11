@@ -18,5 +18,7 @@ public class Main {
         SelectionSort selectionSort = new SelectionSort("SelectionSort");
         int[] numbersSelectionSort = selectionSort.sort(numbers);
         generator.printArray(numbersSelectionSort);
+        Controller controller = new Controller();
+        controller.run();
     }
 }
