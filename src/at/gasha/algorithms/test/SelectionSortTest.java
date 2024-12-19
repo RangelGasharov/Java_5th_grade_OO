@@ -2,8 +2,6 @@ package at.gasha.algorithms.test;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import at.gasha.algorithms.BubbleSort;
 import at.gasha.algorithms.SelectionSort;
 
 public class SelectionSortTest {

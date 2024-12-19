@@ -43,11 +43,11 @@ public class Controller {
     }
 
     public void sortArray(Sorter sorter, int[] array) {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         int[] sortedArray = sorter.sort(array);
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
         DataGenerator.printArray(sortedArray);
-        System.out.println(sorter.getName() + ": " + (end - start) + " ms");
+        System.out.println(sorter.getName() + ": " + (end - start) / 1_000_000.00 + " ms");
     }
 
     public void changeSorter() {
