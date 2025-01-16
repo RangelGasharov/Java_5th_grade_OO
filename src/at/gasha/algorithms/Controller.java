@@ -15,9 +15,11 @@ public class Controller {
         BubbleSort bubbleSort = new BubbleSort("BubbleSort");
         InsertionSort insertionSort = new InsertionSort("InsertionSort");
         SelectionSort selectionSort = new SelectionSort("SelectionSort");
+        QuickSort quickSort = new QuickSort("QuickSort");
         this.availableSorters.add(bubbleSort);
         this.availableSorters.add(insertionSort);
         this.availableSorters.add(selectionSort);
+        this.availableSorters.add(quickSort);
         this.currentSorter = bubbleSort;
         while (isGoing) {
             System.out.println("Enter a number to make the following actions:");
@@ -46,7 +48,6 @@ public class Controller {
         long start = System.nanoTime();
         int[] sortedArray = sorter.sort(array);
         long end = System.nanoTime();
-        DataGenerator.printArray(sortedArray);
         System.out.println(sorter.getName() + ": " + (end - start) / 1_000_000.00 + " ms");
     }
 
